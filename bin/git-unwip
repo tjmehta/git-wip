@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var program    = require('commander');
+var helpers = require('../lib/github-helpers');
+var onError = helpers.onError;
+
+program
+  .usage('')
+  .parse(process.argv)
+;
+
+helpers.getFirstStashForCurrentBranch(function (err, stashIndex) {
+  if (err) { onError(err); } else {
+    helpers.popStash(stashIndex, function (err, stdout) {
+      if (err) { onError(err); } else {
+        console.log(stdout);
+      }
+    });
+  }
+});

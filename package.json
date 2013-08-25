@@ -1,0 +1,43 @@
+{
+  "author": {
+    "name": "Tejesh Mehta",
+    "email": "tejesh.mehta@gmail.com"
+  },
+  "name": "git-wip",
+  "keywords": [
+    "github",
+    "github-flow",
+    "git",
+    "git-flow",
+    "feature-branch",
+    "git wip",
+    "git unwip",
+    "git resume"
+  ],
+  "description": "Git feature branch helpers for saving progress (stash) and resuming work (pop) for.",
+  "version": "0.0.1",
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/tjmehta/git-wip.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjmehta/git-wip/issues"
+  },
+  "bin": {
+    "git-wip": "./bin/git-wip",
+    "git-unwip": "./bin/git-unwip",
+    "git-resume": "./bin/git-resume"
+  },
+  "dependencies": {
+    "commander": "~1.1.1",
+    "keychain": "~0.0.4"
+  },
+  "readme": "Git feature branch helpers for saving progress (stash) and resuming work (pop) for.",
+  "readmeFilename": "Readme.md",
+  "dist": {
+    "shasum": "1fd804457e95575da454edb83c480eb91722c6d7"
+  },
+  "_from": "tjmehta/git-wip"
+}

@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+var exec =  require('child_process').exec;
+var program = require('commander');
+var helpers = require('../lib/github-helpers');
+var onError = helpers.onError;
+
+program
+  .usage('<branch ...>')
+  .parse(process.argv)
+;
+
+var branch = program.args[0];
+
+if (!branch) {
+  onError(new Error('Branch name is required.'));
+}
+
+helpers.checkoutBranch(branch, function (err, stdout) {
+  if (err) { onError(err); } else {
+    console.log(stdout);
+    exec('git unwip', function (err, stdout) {
+      if (err) { onError(err); } else {
+        console.log(stdout);
+      }
+    });
+  }
+});

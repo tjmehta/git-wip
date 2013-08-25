@@ -1,0 +1,5 @@
+#!/bin/sh
+
+name=$1
+test -z $name && name=wip
+git stash save $name
