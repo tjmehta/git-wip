@@ -18,13 +18,13 @@ $ npm install -g git-wip
 ```sh
 $ git wip
 ```
-* alias for 'git stash save wip'
+* alias for ```git add .; git commit -m __wip;```
 
 ####git unwip
 ```sh
 $ git unwip
 ```
-* finds first stash for current branch and pops it
+* checks if last commit is a wip and ```git reset HEAD^```
 
 ####git resume
 ```sh
