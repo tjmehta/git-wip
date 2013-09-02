@@ -15,11 +15,10 @@
     "git resume"
   ],
   "description": "Git feature branch helpers for saving progress (stash) and resuming work (pop) for.",
-  "version": "0.0.1",
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/tjmehta/git-wip.git"
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjmehta/git-wip.git"
   },
   "license": "MIT",
   "bugs": {
