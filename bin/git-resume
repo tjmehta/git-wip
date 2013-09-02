@@ -20,7 +20,7 @@ if (!branch) {
 helpers.checkoutBranch(branch, function (err, stdout) {
   if (err) { onError(err); } else {
     console.log(stdout);
-    var unwip = 'git unwip' + (program.force) ? ' --force' : '';
+    var unwip = 'git unwip' + ((program.force) ? ' --force' : '');
     exec(unwip, function (err, stdout) {
       if (err) { onError(err); } else {
         console.log(stdout);
