@@ -7,6 +7,7 @@ var onError = helpers.onError;
 
 program
   .usage('<branch ...>')
+  .option('-f, --force', 'Force unwip')
   .parse(process.argv)
 ;
 
@@ -19,7 +20,8 @@ if (!branch) {
 helpers.checkoutBranch(branch, function (err, stdout) {
   if (err) { onError(err); } else {
     console.log(stdout);
-    exec('git unwip', function (err, stdout) {
+    var unwip = 'git unwip' + (program.force) ? ' --force' : '';
+    exec(unwip, function (err, stdout) {
       if (err) { onError(err); } else {
         console.log(stdout);
       }

@@ -1,5 +1,6 @@
 #!/bin/sh
 
-name=$1
-test -z $name && name=wip
-git stash save $name
+msg=$1
+test -z $msg && msg=wip
+git add .
+git commit -m "__wip: $msg"

@@ -7,14 +7,20 @@ var onError = helpers.onError;
 program
   .usage('')
   .parse(process.argv)
+  .option('-f, --force', 'Force unwip')
 ;
 
-helpers.getFirstStashForCurrentBranch(function (err, stashIndex) {
-  if (err) { onError(err); } else {
-    helpers.popStash(stashIndex, function (err, stdout) {
-      if (err) { onError(err); } else {
-        console.log(stdout);
-      }
-    });
+helpers.hasWip(function (err, hasWip) {
+  if (err) onError(err); else {
+    if (program.force || hasWip) {
+      helpers.resetHeadCaret(function (err, stdout) {
+        if (err) onError(err); else {
+          console.log(stdout);
+        }
+      });
+    }
+    else {
+      console.log('Last commit is not a WIP. To force use --force or just use "git reset --hard HEAD^"');
+    }
   }
 });
