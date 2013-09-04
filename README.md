@@ -1,19 +1,23 @@
-##Git feature-branch helpers for saving and resuming progress
+##Git helpers for saving and resuming progress
 
-###How to Install
+####For a complete set of git feature-branch helper commands checkout [git-fb](https://github.com/tjmehta/git-fb)
+
+##Bash Commands
+#### ```git wip```
+#### ```git unwip```
+#### ```git resume some-feature```
+
+##Requirements
+
+Node.js - [Download here](http://nodejs.org/download/)
+
+##How to Install
 
 ```sh
 $ npm install -g git-wip
 ```
 
-###Commands
-####git wip
-####git unwip
-####git resume some-feature-branch
-
-*for more git feature branch helper commands checkout [git-fb](https://github.com/tjmehta/git-fb)
-
-###Documentation
+##Documentation
 ####git wip
 ```sh
 $ git wip
