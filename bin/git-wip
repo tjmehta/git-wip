@@ -2,5 +2,5 @@
 
 msg=$1
 test -z $msg && msg=wip
-git add .
+git add --all &&
 git commit -m "__wip: $msg"
