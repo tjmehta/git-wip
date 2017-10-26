@@ -22,7 +22,7 @@ $ npm install -g git-wip
 ```sh
 $ git wip
 ```
-* alias for ```git add .; git commit -m __wip;```
+* alias for ```git add --all; git commit -m __wip;```
 
 #### git unwip
 ```sh
